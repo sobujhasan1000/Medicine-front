@@ -14,7 +14,7 @@ export default async function CategoryPage({
   const filteredProducts = products.filter((product) =>
     product.categories?.includes(params.catagorieName)
   );
-
+  console.log(filteredProducts, "data show");
   if (!filteredProducts) {
     return <div>No products found</div>;
   }

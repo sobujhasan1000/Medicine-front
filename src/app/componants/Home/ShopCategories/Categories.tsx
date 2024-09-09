@@ -11,7 +11,7 @@ const categories = [
     img: "https://www.netmeds.com/images/category/prod/thumb/face_wash_cleansers.png",
   },
   {
-    name: "Dressing",
+    name: "dressing",
     img: "https://www.netmeds.com/images/category/prod/thumb/dressing.png",
   },
   {
