@@ -23,7 +23,7 @@ export default async function Home() {
       <OfferMedicine></OfferMedicine>
       <Products products={products} />
       <NewProducts products={products} />
-      <Categories></Categories>
+      <Categories products={products}></Categories>
       <BestSell products={products} />
       <HealthCare />
       <ExploreBeauty></ExploreBeauty>
