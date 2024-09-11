@@ -4,7 +4,7 @@ import { product } from "@/type";
 const AllMedicinepage = async () => {
   const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
   const products: product[] = await res.json();
-  //   console.log(products);
+  console.log(products);
   return (
     <div className="my-6">
       <div>
