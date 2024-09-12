@@ -11,7 +11,7 @@ const OfferMedicine = () => {
             width={50}
             height={50}
             src="https://www.netmeds.com/assets/gloryweb/images/icons/Wellnessnew.svg"
-            alt=""
+            alt="medicine"
           />
           <div>
             <h1 className="text-xl font-bold">Order Medicine</h1>
@@ -24,7 +24,7 @@ const OfferMedicine = () => {
             width={50}
             height={50}
             src="https://www.netmeds.com/assets/gloryweb/images/icons/Beautynew.svg"
-            alt=""
+            alt="medicine"
           />
           <div>
             <h1 className="text-xl font-bold">Beauty</h1>

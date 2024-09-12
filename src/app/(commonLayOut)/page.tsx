@@ -16,7 +16,7 @@ export default async function Home() {
 
   const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
   const products: product[] = await res.json();
-  console.log(products.length);
+  // console.log(products.length);
   return (
     <div>
       <CarusolSet></CarusolSet>

@@ -3,7 +3,6 @@ import { getUserInfo, removeUser } from "@/utils/actions/auth.services";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 const Navbar = () => {
   const getUser = getUserInfo();
   const { email, role, image } = getUser || {};
@@ -25,25 +24,24 @@ const Navbar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a href="/">Home</a>
-            </li>
-
-            <li>
-              <a href="/AllMedicine">Medicine</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="/BeautyProducts">Beauty</a>
+              <Link href="/AllMedicine">Medicine</Link>
             </li>
             <li>
-              <a href="/wellness">Wellness</a>
+              <Link href="/BeautyProducts">Beauty</Link>
             </li>
             <li>
-              <a href="/Device">Device</a>
+              <Link href="/wellness">wellness</Link>
+            </li>
+            <li>
+              <Link href="/Device">Device</Link>
             </li>
 
             {!getUser && (
               <li>
-                <a href="/loging">LogIn</a>
+                <Link href="/loging">Login</Link>
               </li>
             )}
           </ul>
@@ -111,18 +109,16 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                 >
                   <li>
-                    <a className="justify-between">
+                    <Link href="" className="justify-between">
                       Profile
                       <span className="badge">New</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link href="/dashboard">Dashboard</Link>
                   </li>
                   <button onClick={handleLogOut}>
-                    <li>
-                      <a>Logout</a>
-                    </li>
+                    <li>Logout</li>
                   </button>
                 </ul>
               </div>
