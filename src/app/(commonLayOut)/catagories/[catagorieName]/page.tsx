@@ -9,12 +9,12 @@ export default async function CategoryPage({
 }) {
   const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
   const products: product[] = await res.json();
-  console.log(products, "");
+  // console.log(products, "");
   // Filter products based on the categoryName from the dynamic route
   const filteredProducts = products.filter((product) =>
     product?.categories?.includes(params.catagorieName)
   );
-  console.log(filteredProducts, "data show");
+  // console.log(filteredProducts, "data show");
   if (!filteredProducts) {
     return <div>No products found</div>;
   }

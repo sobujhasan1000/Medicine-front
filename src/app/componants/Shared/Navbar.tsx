@@ -1,25 +1,33 @@
+// components/Navbar.tsx
 "use client";
+import { useEffect, useState } from "react";
 import { getUserInfo, removeUser } from "@/utils/actions/auth.services";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { user } from "@/type";
+
 const Navbar = () => {
-  const getUser = getUserInfo();
-  const { email, role, image } = getUser || {};
+  const [getUser, setGetUser] = useState<user | null>(null);
   const route = useRouter();
+
+  // Fetch user info on the client-side only
+  useEffect(() => {
+    const user = getUserInfo();
+    console.log("Fetched User Info: ", user); // Debugging: Check if the user is fetched correctly
+    setGetUser(user);
+  }, []);
 
   const handleLogOut = () => {
     removeUser();
-    route.refresh();
+    route.refresh(); // Refresh the page to reflect the changes after logout
   };
 
-  // console.log(getUser);
-  // const isLoggedIn = !!session?.user?.email;
   return (
     <div>
-      <div className="navbar bg-teal-500  rounded-md">
+      <div className="navbar bg-teal-500 rounded-md">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">E-Medicin</a>
+          <a className="btn btn-ghost text-xl">E-Medicine</a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
@@ -33,18 +41,21 @@ const Navbar = () => {
               <Link href="/BeautyProducts">Beauty</Link>
             </li>
             <li>
-              <Link href="/wellness">wellness</Link>
+              <Link href="/wellness">Wellness</Link>
             </li>
             <li>
               <Link href="/Device">Device</Link>
             </li>
 
+            {/* If user is not logged in, show the login link */}
             {!getUser && (
               <li>
-                <Link href="/loging">Login</Link>
+                <Link href="/login">Login</Link>
               </li>
             )}
           </ul>
+
+          {/* If user is logged in, show the profile and cart */}
           {getUser && (
             <>
               <div className="dropdown dropdown-end">
@@ -109,7 +120,7 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                 >
                   <li>
-                    <Link href="" className="justify-between">
+                    <Link href="/profile" className="justify-between">
                       Profile
                       <span className="badge">New</span>
                     </Link>
