@@ -17,7 +17,7 @@ const DATA = [
 
 const CarusolSet = () => {
   return (
-    <main className="flex flex-col items-center justify-center py-4">
+    <main className="flex flex-col items-center justify-center">
       <div className="w-full max-w-5xl">
         <Carousel data={DATA} />
       </div>
