@@ -50,7 +50,7 @@ const Navbar = () => {
             {/* If user is not logged in, show the login link */}
             {!getUser && (
               <li>
-                <Link href="/login">Login</Link>
+                <Link href="/loging">Login</Link>
               </li>
             )}
           </ul>
