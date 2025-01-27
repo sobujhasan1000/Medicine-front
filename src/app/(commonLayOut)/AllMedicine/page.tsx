@@ -2,7 +2,7 @@ import ProductCard from "@/app/componants/Shared/ProductCard";
 import { product } from "@/type";
 
 const AllMedicinepage = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
+  const res = await fetch("https://asian-server.vercel.app/medicines");
   const products: product[] = await res.json();
   console.log(products);
   return (

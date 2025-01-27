@@ -7,7 +7,7 @@ export default async function ProductDetails({
 }: {
   params: { id: string };
 }) {
-  const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
+  const res = await fetch(`https://asian-server.vercel.app/medicines`);
   const products: product[] = await res.json();
   const product = products.find((p) => p._id === params.id);
 

@@ -114,7 +114,9 @@ const LoginPage = () => {
             <button
               className="btn btn-circle"
               onClick={() =>
-                signIn("github", { callbackUrl: "http://localhost:3000" })
+                signIn("github", {
+                  callbackUrl: "https://asian-server.vercel.app",
+                })
               }
             >
               <Image

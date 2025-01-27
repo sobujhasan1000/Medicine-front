@@ -14,7 +14,7 @@ export default async function Home() {
   // const { data: session } = useSession();
   // console.log(session);
 
-  // const res = await fetch(`${process.env.BACKEND_URL}/medicines`);
+  // const res = await fetch(`${import.meta.env.BACKEND_URL}/medicines`);
   const res = await fetch("https://asian-server.vercel.app/medicines");
   const products: product[] = await res.json();
   // console.log(products.length);
